@@ -142,3 +142,10 @@ dist
 # ✅ Ignore ENV files recursively
 **/.env
 **/.env.*.local
+
+# Docker files
+.dockerignore
+docker-compose.override.yml
+docker-compose.override.*.yml
+Dockerfile.*
+Dockerfile-local
