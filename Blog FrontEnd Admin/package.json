@@ -1,0 +1,94 @@
+{
+  
+  "dependencies": {
+  
+    
+  "@fingerprintjs/fingerprintjs": "^4.6.1",
+  
+    
+  "@reduxjs/toolkit": "^2.6.0",
+  
+    
+  "@tiptap/core": "^2.11.5",
+  
+    
+  "@tiptap/extension-bold": "^2.11.5",
+  
+    
+  "@tiptap/extension-collaboration": "^2.11.5",
+  
+    
+  "@tiptap/extension-heading": "^2.11.5",
+  
+    
+  "@tiptap/extension-image": "^2.11.5",
+  
+    
+  "@tiptap/extension-italic": "^2.11.5",
+  
+    
+  "@tiptap/extension-link": "^2.11.5",
+  
+    
+  "@tiptap/extension-mention": "^2.11.5",
+  
+    
+  "@tiptap/extension-table": "^2.11.5",
+  
+    
+  "@tiptap/extension-underline": "^2.11.5",
+  
+    
+  "@tiptap/react": "^2.11.5",
+  
+    
+  "@tiptap/starter-kit": "^2.11.5",
+  
+    
+  "axios": "^1.8.1",
+  
+    
+  "browser-image-compression": "^2.0.2",
+  
+    
+  "js-cookie": "^3.0.5",
+  
+    
+  "lottie-react": "^2.4.1",
+  
+    
+  "markdown-it": "^14.1.0",
+  
+    
+  "react-mui-sidebar": "^1.6.0",
+  
+    
+  "react-redux": "^9.2.0",
+  
+    
+  "react-router-dom": "^7.2.0",
+  
+    
+  "react-toastify": "^11.0.5",
+  
+    
+  "redux-persist": "^6.0.0",
+  
+    
+  "sal.js": "^0.8.5"
+  
+  },
+  
+  "scripts": {
+  
+    
+  "dev": "vite",
+  
+    
+  "build": "vite build",
+  
+    
+  "preview": "vite preview"
+  
+  }
+}

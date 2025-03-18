@@ -1,0 +1,179 @@
+.NewRegisterParent{
+    position: relative;
+    width: 95%;
+    height: 93%;
+    background: linear-gradient(135deg, #182d3efd, #0B4F2C);
+   
+    border-radius: 30px;
+    transition:all 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+    overflow: auto;
+    display: flex;
+align-items: center;
+    flex-direction: column;
+    justify-content: space-between;
+    
+}
+
+.allAttributesRegister,.registerDataDisplayed{
+    width: 98%;
+    height: 4.5rem;
+    min-height: 4.5rem;
+    position: sticky;
+    top: 2%;
+    background-color: #18283b02;
+    border-radius: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 20px;
+    padding-right: 6px;
+}
+
+.registerDataDisplayed{
+    position: static;
+    background-color: #00000044;
+    font-weight:400;
+}
+.registerAtrributeField{
+width: 10%;
+height: 100%;
+/* background-color: pink; */
+
+display: flex;
+justify-content: center;
+align-items: center;
+font-size: 1.4rem;
+font-weight: bolder;
+color: white;
+}
+
+#rNumber{
+    width: 4rem;
+}
+#rName{
+    width: 15%;
+}
+#rEmail{
+    width: 20%;
+}
+#rButtons{
+    width: 40%;
+}
+
+.registerDataContainer{
+    width: 100%;
+    height: calc(100% - 6.5rem);
+    /* background-color: red; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-block: 15px;
+    gap: 10px;
+    overflow-y: auto;
+}
+
+.registerDataContainer::-webkit-scrollbar{
+    width: 10px;
+    background-color: rgba(0, 0, 0, 0.014);
+}
+.registerDataContainer::-webkit-scrollbar-thumb{
+    border-radius: 20px;
+    background-color: rgba(0, 0, 0, 0.283);
+}
+.registerDataDisplayed span {
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    /* width: 100%; */
+    display: block;
+    overflow: hidden;
+}
+
+#rButtons{
+    /* background-color: red; */
+    justify-content: end;
+    gap: 10px;
+}
+#rButtons button {
+    width: 9rem;  /* Slightly reduced width */
+    height: 3.2rem;  /* Reduced height for better proportion */
+    border-radius: 10px;
+    border: none;  /* Removing default border */
+    font-weight: bold;
+    color: white; 
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+}
+
+#rAccept {
+    background-color: #2EBA4A;  /* Lime Green */  
+}
+
+
+
+#rAccept:hover {
+    background-color: #28a428; /* Slightly darker on hover */
+}
+
+#rReject {
+    background-color: #FF3030;  /* Bright Red */
+    
+}
+#rReject:hover {
+    background-color: #d90000; /* Darker red on hover */
+}
+.registerSearch{
+    width: auto;
+    height: 4rem;
+    min-width: 4rem;
+    background-color: var(--bg-primary-green);
+    border-radius: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+
+}
+.filterSearch{
+    width:0rem;
+    height: 100%;
+    outline: none;
+    border: none;
+    font-size: 1.6rem;
+    color: rgb(0, 0, 0);
+    background-color: transparent;
+       transition:0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+.registerSearch:hover{
+    padding-left: 10px;
+}
+
+
+
+
+/* Expand on hover */
+.registerSearch:hover .filterSearch { 
+    width: 20rem;
+    padding-left: 20px;
+}
+
+
+
+.reloader{
+    /*   background-color: red; */
+      font-size: 2.8rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      
+  }
+  .reloader:hover{
+    cursor: pointer;
+  }
+
+  
+  @keyframes rotateAnimation {
+    0% { transform: rotate(360deg); }
+    99.9% { transform: rotate(0deg); } 
+    100% { transform: rotate(360deg); }
+}
+

@@ -1,0 +1,21 @@
+.dashBoard-Parent{
+    width: 100%;
+    height: 100vh;
+    background-color: var(--bg-primary-green);
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+
+}
+.DashBoardContent{
+    width: 100%;
+    height: 100%;
+    /* background-color: rgb(255, 23, 23); */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    overflow-y: auto;
+    position: relative;
+    
+}

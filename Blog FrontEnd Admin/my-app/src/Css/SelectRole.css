@@ -1,0 +1,132 @@
+.select-role{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0);
+   backdrop-filter: blur(10px);
+   z-index: 999;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   transition: 0.5s ease-in-out;
+}
+.selectRoleTab{
+width: 30rem;
+height: auto;
+background-color: var(--bg-secondary-dark);
+border-radius: 20px;
+display: flex;
+flex-direction: column;
+overflow: hidden;
+padding-inline: 10px;
+padding-top: 10px;
+gap: 5px;
+box-shadow: 0px 30px 40px var(--shadow-dark);
+transition:0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+
+}
+.optionValueField{
+width: 100%;
+height: 7rem;
+/* background-color: red; */
+display: flex;
+flex-direction: column;
+gap: 10px;
+overflow: hidden;
+transition:0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+.optionValueField > span{
+    font-size: 1.4rem;
+    color: var(--light-gray-text);
+    margin-left: 3px;
+}
+/* 
+.optionValueField select{
+    border: none;
+    outline: none;
+    height: 4rem;
+    border-radius: 10px;
+    background-color: var( --bg-profile-gray);
+    color: rgb(215, 215, 215);
+    padding-left: 5px;
+    font-size: 1.4rem;
+    
+} */
+
+.optionValueField > input{
+height: 79%;
+border-radius: 10px;
+background-color: var( --bg-profile-gray);
+border: none;
+outline: none;
+padding-left: 5px;
+color: rgb(215, 215, 215);
+font-size: 1.4rem;
+}
+
+
+.selectRoleButtons{
+    position: relative;
+width: 100%;
+height: 6rem;
+display: flex;
+align-items: center;
+justify-content: center;
+gap: 5%;
+/* background-color: pink; */
+}
+.selectRoleButtons::after{
+    content: "";
+    position: absolute;
+    width: 100%;
+    top: 0;
+    background-color:rgba(215, 215, 215, 0.147) ;
+    height: 0.08px;
+    
+}
+
+.roleSelectDiv{
+    width: 100%;
+    height: 3.5rem;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+    
+    align-items: center;
+  /*   background-color: red; */
+}
+
+.RollAccept,.RollDecline{
+    width: 45%;
+    height: 65%;
+    border-radius: 10px;
+    background-color: #2EBA4A;
+    outline: none;
+    border: none;
+    color: white;
+    font-size: 1.5rem;
+}
+.RollDecline{
+    background-color: #FF3030;
+}
+
+.rolloption{
+    width: 32%;
+    height: 100%;
+    border-radius: 10px;
+    outline: none;
+    border: none;
+    font-size: 1.3rem;
+    color: rgba(255, 255, 255, 0.515);
+    background-color: var(--bg-profile-gray);
+    transition: 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.rolloption:hover{
+    cursor: pointer;
+}
+
+.rolloption.active{
+    background-color: #2EBA4A;
+    color: rgb(255, 255, 255);
+}

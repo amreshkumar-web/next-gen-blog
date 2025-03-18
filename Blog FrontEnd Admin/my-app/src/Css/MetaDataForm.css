@@ -1,0 +1,180 @@
+.mainControlerMetaDataForm{
+    position: relative;
+    width: 95%;
+    height:97%;
+    /* background-color: red; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    border-radius: 20px;
+}
+
+.MetaDataFormParent{
+    width: 100%;
+    height:100%;
+    background: linear-gradient(135deg, #182d3efd, #0B4F2C);
+    display: flex;
+
+    align-items: center;
+    flex-direction: column;
+    gap: 80px;
+    padding-block: 30px;
+   
+    overflow-y: auto;
+    background-attachment: fixed;
+    transition:0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+
+   /*  background-color: rgba(0, 0, 0, 0.099); */
+}
+
+.MetaDataFormParent > span{
+    font-size: 3rem;
+    background: linear-gradient(90deg, #f9f9f9ad,rgba(255, 255, 255, 0.445));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: bolder;
+    
+}
+
+.MetaDataFormParent::-webkit-scrollbar{
+    width: 0px;
+   /*  background-color: rgba(255, 0, 0, 0.905); */
+}
+
+.MetaDataFormParent::-webkit-scrollbar-thumb{
+    background-color: rgba(0, 0, 0, 0.181);
+    border-radius: 50px;
+}
+
+
+.metaInputDiv{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-width: 2rem;
+    /* min-height: 24rem; */
+    height: auto;
+    width: 80%;
+    background-color: var( --bg-secondary-dark);
+    background-color: rgba(54, 54, 54, 0.127);
+    /* background-color: rgb(47, 253, 164); */
+    padding: 10px;
+    gap: 8px;
+    border-radius: 10px;
+    box-shadow: 0px 30px 40px var(--shadow-dark);
+    border: 1px solid rgba(255, 255, 255, 0.201);
+    /* transition:1s cubic-bezier(0.34, 1.56, 0.64, 1); */
+    
+    
+}
+.metaInputDiv > span{
+    color: var(--light-gray-text);
+    font-size: 2rem;
+    color: rgba(255, 255, 255, 0.558);
+    z-index: 9;
+}
+.metaInputDiv > p{
+    width: 100%;
+    height: 100%;
+    color: rgba(255, 255, 255, 0.331);
+    font-size: 1.6rem;
+    line-height: 2rem;
+    padding-block: 8px;
+    z-index: 9;
+    
+}
+.metaInputDiv > textarea{
+    width: 100%;
+    height: 10rem;
+    background-color:var(--bg-profile-gray) ;
+    background-color: rgba(0, 0, 0, 0.297);
+    border: none;
+    outline: none;
+    color: white;
+    border-radius: 10px;
+    max-width: 100%;
+    max-height: 15rem;
+    min-height: 10rem;
+    padding: 9px;
+    font-size: 1.5rem;
+    z-index: 9;
+}
+.metaInputDiv > textarea::placeholder{
+    color: rgba(255, 255, 255, 0.235);
+}
+.shinnyHandelContainer{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    overflow: hidden;
+    
+}
+.shinyMetaDiv{
+    position: absolute;
+    height: 200%;
+    width: 8rem;
+    background-color: rgba(255, 255, 255, 0.121);
+    top: -50%;
+    transform: translateX(-150%) rotateZ(20deg);
+    z-index: 1;
+    animation: shiny 12s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+    box-shadow: 0px 0px 22px rgba(255, 255, 255, 0.228);
+    filter: brightness(2);
+}
+
+@keyframes shiny {
+    0% {
+        transform: translateX(-150%) rotateZ(20deg);
+    }
+    10% {
+        transform: translateX(2050%) rotateZ(20deg);
+    }
+    100% {
+        transform: translateX(2050%) rotateZ(20deg); /* Hold karne ke liye */
+    }
+}
+
+
+.MetaTagNextBtn{
+ /*    position: absolute; */
+    width: 79%;
+    height: auto;
+   /*  background-color: rgb(255, 0, 43); */
+    display: flex;
+    justify-content: end;
+    gap: 10px;
+}
+.Next,.Reset{
+    width: 10rem;
+    height: 4rem;
+    border-radius: 10px;
+    outline: none;
+    border: none;
+    background-color: #2EBA4A;
+    font-size: 1.5rem;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    transition: 0.3s ease-in-out;
+}
+
+.Reset{
+    background-color: #FF3030;
+}
+.Reset:hover{
+    background-color: #cf2222;
+}
+
+.Next:hover{
+    background-color: #2aae44;
+}
+.MetaTagNextBtn button:hover{
+    cursor: pointer;
+}

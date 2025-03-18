@@ -1,0 +1,10 @@
+[data-sal="slide-up"] {
+    opacity: 0;
+    transform: translateY(150px); /* Start further down */
+    transition: opacity 01s ease-out, transform 0.7s cubic-bezier(0.33, 1, 0.68, 1);
+  }
+  
+  [data-sal="slide-up"].sal-animate {
+    opacity: 1;
+    transform: translateY(0); /* End at the normal position */
+  }
