@@ -7,7 +7,9 @@ import { GrFormNextLink } from "react-icons/gr";
 import MessageBox from "./MessageBox";
 import { toast } from "react-toastify"
 
-export default function MetaDataForm({ setMeta }) {
+export default function MetaDataForm({ setMeta}) {
+
+
 
     //handel by parent component
     function nextHandel() {

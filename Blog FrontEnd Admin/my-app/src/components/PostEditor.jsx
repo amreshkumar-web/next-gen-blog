@@ -13,20 +13,38 @@ export default function PostEditor() {
  const [postGranted,setPostGranted] = useState(false)
 const [loading,setLoading] = useState(false);
 
+//This is for scheduling this state is taking value from their children state, which is my editorMy editor have a component which sides for scheduling. The scheduling will be settled, then it will be come from this component to this state
+const [Scheduling,setScheduling] = useState(undefined);
+
+
+
+
  useEffect(() => {
   setFinalData({
     metaData: JSON.stringify(MetaData),
     postContent: JSON.stringify(PostContent),
+    schedule:JSON.stringify(Scheduling)
   });
   /* console.log(JSON.stringify(PostContent)); */
 }, [PostContent]);
 
+
+
+
+
+
 // ✅ Jab finalData update ho jayega tabhi API call hoga
 useEffect(() => {
+  console.log(Scheduling);
   if (finalData.metaData && finalData.postContent) {
     handelPostApi();
   }
 }, [finalData]);
+
+
+
+
+
 
 //post api
 
@@ -58,7 +76,7 @@ try {
       <div className="PostEditorParent">
        
        {
-        loading ? <Loading Data="On way"/> : Object.keys(MetaData).length<1?<MetaDataForm setMeta={setMetaData}/>: <MyEditor setMeta={setMetaData} setPostsData={setPostContent}/>
+        loading ? <Loading Data="On way"/> : Object.keys(MetaData).length<1?<MetaDataForm setMeta={setMetaData}/>: <MyEditor  forSheduling={setScheduling} setMeta={setMetaData} setPostsData={setPostContent}/>
        }
        
       </div>

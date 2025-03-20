@@ -10,7 +10,14 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@date-io/dayjs": "^3.2.0",
+    "@emotion/react": "^11.14.0",
+    "@emotion/styled": "^11.14.0",
     "@fingerprintjs/fingerprintjs": "^4.6.1",
+    "@mui/lab": "^6.0.0-beta.31",
+    "@mui/material": "^6.4.8",
+    "@mui/system": "^6.4.8",
+    "@mui/x-date-pickers": "^7.28.0",
     "@reduxjs/toolkit": "^2.6.1",
     "@tiptap/extension-blockquote": "^2.11.5",
     "@tiptap/extension-bullet-list": "^2.11.5",
@@ -33,6 +40,7 @@
     "@tiptap/starter-kit": "^2.11.5",
     "axios": "^1.8.3",
     "browser-image-compression": "^2.0.2",
+    "dayjs": "^1.11.13",
     "framer-motion": "^12.4.10",
     "hamburger-react": "^2.5.2",
     "lottie-react": "^2.4.1",

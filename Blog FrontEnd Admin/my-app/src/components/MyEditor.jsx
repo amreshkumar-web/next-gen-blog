@@ -26,6 +26,9 @@ import { useState, useRef, useEffect } from "react";
 import handleFileChange from "../ImageHandel/imageHandeler";
 import { LuFolderSymlink } from "react-icons/lu";
 import { toast } from "react-toastify";
+import { FaRegClock } from "react-icons/fa";
+import { MdOutlineDrafts } from "react-icons/md";
+import Sheduling from "./Sheduling";
 
 // Add CSS for resizable images directly to ensure styles are applied
 const imageResizeCSS = `
@@ -138,7 +141,7 @@ const ResizableImageExtension = Image.extend({
   },
 });
 
-const MyEditor = ({ setPostsData,setMeta }) => {
+const MyEditor = ({ setPostsData,setMeta,forSheduling }) => {
   const [uploadImage, setUploadImage] = useState();
   const [compressedImage, setCompressedImage] = useState();
   const [allPreviewImages, setAllPreviewImages] = useState([]); 
@@ -147,20 +150,59 @@ const MyEditor = ({ setPostsData,setMeta }) => {
   const fileInputRef = useRef(null);
   const editorRef = useRef(null);
 
-  // Save content
+
+//shedulingTab is handel the sheduling component when this will trigger means open or not
+//shedulingTimeDate it take value from the sheduling component and pass it to PostEditor by forSheduling props
+const [shedulingTab,setShedulingTab] = useState(false)
+  const [shedulingTimeDate,setShedulingTimeDate] = useState()
+ 
+ 
+  // Save content is the final call means submit the values 
+  // forsheduling is coming from there parent postEditor which handel all the logic or all the api works parent name is PostEditor.jsx
   const saveContent = () => {
     if (editor) {
       const content = editor.getHTML();
-      console.log(content);
+      forSheduling(shedulingTimeDate);
       setPostsData(content);
+      
     } else {
       console.error('Editor is not ready');
     }
   };
 
 
+//this will check there is any shedule values are seted or not if seted then this will directly set that post for that time 
+
+  useEffect(() => {
+    if (shedulingTimeDate !== undefined) { 
+      saveContent();
+    }
+  }, [shedulingTimeDate]);
+
+
+
+//handelShedule for open or activate sheduleComponent
+function handelShedule(){
+  setShedulingTab(true);
+}
+
+
+
+
+
+
+
+
+
+// all the editor functionality functions are start from here--------------------------------------
   
   
+
+
+
+
+
+
   // Highlight colors array
   const highlightColors = [
     '#FFFF00', // Yellow
@@ -513,6 +555,11 @@ const MyEditor = ({ setPostsData,setMeta }) => {
 
   return (
     <motion.div initial={{ width: "50%" }} animate={{ width: "" }} className="MyEditorParent">
+      
+      {
+        shedulingTab && <Sheduling setShedulingTab={setShedulingTab} forSheduling={setShedulingTimeDate}/>
+      }
+      
       <motion.div initial={{ width: "80%" }} animate={{ width: "" }} className="myEditorBox">
         {/* Toolbar */}
         <motion.div initial={{ top: "-20%" }} animate={{ top: "" }} className="editorOptions" style={{ marginBottom: '10px' }}>
@@ -652,7 +699,9 @@ const MyEditor = ({ setPostsData,setMeta }) => {
       </motion.div>
       <div className="editorSubmitBtn">
         <button onClick={()=>{setMeta({})}} className="prevButton"><GrFormPreviousLink /> Prev</button>
-        <button onClick={()=>{saveContent()}} className="postButton">Next <GrFormNextLink /></button>
+        <button style={{background:"#2eba4ace"}} onClick={()=>{handelShedule()}} className="postButton"><FaRegClock />Shedule</button>
+        <button style={{background:"grey"}} className="postButton"><MdOutlineDrafts /> Draft</button>
+        <button onClick={()=>{saveContent()}} className="postButton">Post</button>
       </div>
     </motion.div>
   );

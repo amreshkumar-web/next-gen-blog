@@ -8,7 +8,7 @@ const postDb = new mongoose.Schema({
     },
     Status: {
         type: String,
-        enum: ['active', 'inactive', 'draft'], // Sirf ye 3 values allow hongi
+        enum: ['active', 'inactive', 'draft','scheduled'], // Sirf ye 3 values allow hongi
         required: true // Status ko required bana rahe hain
     },
     MetaData: {
@@ -46,8 +46,8 @@ const postDb = new mongoose.Schema({
 
 // `_id` pe default indexing hoti hai
 // Slug pe manual indexing for SEO lookup
-postDb.index({ "MetaData.Slug": 1 });
+
 postDb.index({"Status":1});
-postDb.index({'PostId':1});
+
 
 module.exports = mongoose.model('PostData', postDb);
