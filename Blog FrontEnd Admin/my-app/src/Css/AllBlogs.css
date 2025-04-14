@@ -1,0 +1,227 @@
+.allBlogsParent{
+    position: relative;
+    width: 95%;
+    height: 93%;
+    /* background-color: rgb(0, 0, 0); */
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.optionsForAllBlogs{
+    width: 100%;
+    height: 5rem;
+    background-color: rgb(128, 23, 23);
+}
+.allPostChild{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+}
+.allBlogsCards{
+    position: relative;
+    width: 38rem;
+    height: 54rem;
+    background-color: red;
+    border-radius: 30px;
+    overflow: hidden;
+   
+    box-shadow: 0px 4px 24px 0px rgba(0, 0, 0, 0.428);
+}
+.postThumbnail{
+    position: absolute;
+    height: 25rem;
+    width: 100%;
+    top: 0;
+    background-color: pink;
+}
+
+.postAllContent{
+    position: absolute;
+    bottom: 0;
+    background-color: rgba(255, 255, 255, 0.632);
+    width: 100%;
+    height: 34rem;
+    z-index: 99;
+    border-top-left-radius: 40px;
+    border-top-right-radius: 40px;
+    backdrop-filter: blur(10px);
+    padding: 10px;
+    padding-top: 10%;
+}
+
+.postStatusBar{
+    position: absolute;
+    width: 26rem;
+    height: 5rem;
+    left: 50%;
+    top: -8%;
+    transform: translateX(-50%);
+    background: rgba(255, 255, 255, 0.568);
+    box-shadow: 0px 4px 24px 0px rgba(0, 0, 0, 0.316);
+    backdrop-filter: blur(130px);
+    border-radius: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+}
+
+.isActiveStatus,.seoScoreBar{
+    width: 40%;
+    height: 85%;
+    background-color: black;
+    border-radius: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 6px;
+    overflow: hidden;
+}
+.seoScoreBar{
+    width: 55%;
+    height: 85%;
+}
+.activeGreenBlink{
+    width: 1.2rem;
+    height: 1.2rem;
+    background-color: #6BFF3E;
+    border-radius: 20px; 
+}
+
+.isActiveStatus span{
+  color: white;
+  font-size: 1.8rem;
+  line-height: 0;
+  letter-spacing: 0.2px;
+  font-weight: bolder;
+  font-family: 'Helvetica Rounded', sans-serif;
+
+}
+.seoScoreBar{
+    justify-content: space-between;
+    padding-inline: 5px;
+    gap: 0;
+}
+
+.linePartition{
+    height: 75%;
+   width: 2px;
+   background-color: white;
+}
+
+.postSeoScore,.postViews{
+    position: relative;
+    width: 48%;
+    height: 100%;
+    /* background-color: pink; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.postViews span{
+    font-size: 2.5rem;
+    color: white;
+    font-family: sans-serif;
+}
+.postViews p{
+    color: rgba(173, 172, 172, 0.8);
+    position: absolute;
+    bottom: 1px;
+    right: 4%;
+    font-size: 0.8rem;
+}
+.postSeoScore p{
+    color: rgba(173, 172, 172, 0.815);
+    position: absolute;
+    bottom: 1px;
+    left: 4%;
+    font-size: 0.8rem;
+}
+
+.postSeoScore span{
+    font-size: 2.5rem;
+    color: #6BFF3E;
+    font-family: sans-serif;
+}
+
+.postDesc{
+    width: 100%;
+    height: 8.2rem;
+    /* background-color: red; */
+}
+.postDesc p {
+    font-size: 2.5rem;
+    font-weight: bolder;
+  line-height: 2.7rem;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;         /* Change this to how many lines you want */
+    -webkit-box-orient: vertical;
+  
+    overflow: hidden;
+    text-overflow: ellipsis;
+   
+        font-family: 'Helvetica Rounded', sans-serif;
+      
+  }
+
+  .postAllDetail{
+    width: 100%;
+    height: 16rem;
+   /*  background-color: rebeccapurple; */
+    overflow: hidden;
+    display: flex;
+  }
+
+.halfPostData{
+    width: 50%;
+    height: 100%;
+    /* background-color: red; */
+    display: flex;
+    flex-direction: column;
+    gap: 5px;   
+    padding-top: 18px;
+    padding-left: 5px; 
+    
+}
+.allDetailFirstPart{
+    font-size: 1.4rem;
+    display: flex;
+}
+
+
+
+
+
+  .postAllHandelBtn{
+    width: 100%;
+    height: 5rem;
+    background-color: rgba(0, 0, 0, 0.265);
+    border-radius: 25px;
+    display: flex;
+    align-items: center;
+    padding-inline: 5px;
+    gap: 2px;
+  }
+
+  .postHandelBtnEdit,.postHandelBtnShedule,.postHandelBtnDelete{
+    padding: 10px;
+    border-radius: 20px;
+    height: 85%;
+    min-width: 7rem;
+    outline: none;
+    background-color: var(--accept-btn);
+    border: 3px solid #42A922;
+    color: white;
+  }
+  .postHandelBtnShedule{
+    min-width: 8rem;
+    background-color: rgba(204, 153, 0, 0.77);
+    border-color: #AB820D;
+  }
+
+  .postHandelBtnDelete{
+    background-color: #CE0000;
+    border-color: #BC0303;
+  }

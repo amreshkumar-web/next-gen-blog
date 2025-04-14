@@ -13,7 +13,7 @@ async function eventTrigger(postId) {
 
         try {
             const makePostActive = await postDb.updateOne(
-                { PostId: postId },
+                { _id: postId },
                 { $set: { Status: "active" } },
                 { session }
             );
@@ -67,7 +67,7 @@ async function eventTrigger(postId) {
 
 
 
-const jobScheduler = async (postId, scheduleTime, jUserId) => {
+const jobScheduler = async (postId, scheduleTime, jUserId,serverReStart = false) => {
     try {
         if (!postId || !scheduleTime || !jUserId) {
             console.log("Invalid input for scheduling job");
@@ -85,15 +85,17 @@ const jobScheduler = async (postId, scheduleTime, jUserId) => {
 
         
 
-        const pushInScheduleDb = await scheduleDb.create({
-            PostId: postId,
-            UserId: jUserId,
-            ScheduleTime: scheduleTime 
-        });
-
-        if (!pushInScheduleDb) {
-            console.log("Failed to push in scheduleDb");
-            return false;
+        if(!serverReStart){
+            const pushInScheduleDb = await scheduleDb.create({
+                PostId: postId,
+                UserId: jUserId,
+                ScheduleTime: scheduleTime 
+            });
+    
+            if (!pushInScheduleDb) {
+                console.log("Failed to push in scheduleDb");
+                return false;
+            }
         }
         console.log("Scheduled successfully");
         return true;
@@ -103,4 +105,31 @@ const jobScheduler = async (postId, scheduleTime, jUserId) => {
     }
 };
 
-module.exports = jobScheduler;
+
+const sheduleExistWork = async () =>{
+    try {
+
+        const response = await scheduleDb.find({}).lean();
+        if(response && response.length===0 ) return;
+        await Promise.all(response.map( async (item)=>{
+            const {PostId,UserId,ScheduleTime} = item;
+          if(ScheduleTime < Date.now()){
+             await eventTrigger(PostId);
+          }
+          else{
+            await jobScheduler(PostId,ScheduleTime,UserId,true);
+          }
+        }))
+
+
+    } catch (error) {
+        console.log("Error in utlis jobSheduler SheduleExitWorkFunction",error);
+        return false;
+    }
+}
+
+
+
+
+
+module.exports = {jobScheduler,sheduleExistWork};

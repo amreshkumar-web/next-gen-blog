@@ -4,7 +4,7 @@ import React, { useState } from 'react';
 import dayjs from 'dayjs';
 import "../Css/Sheduling.css";
 import { motion } from 'framer-motion';
-import { useEffect } from 'react';
+
 
 export default function Sheduling({setShedulingTab,forSheduling}) {
   const [rightValue, setRightValue] = useState(null);
@@ -28,7 +28,6 @@ export default function Sheduling({setShedulingTab,forSheduling}) {
 
   function sendingDateTime(){
     if (rightValue) {
-        console.log("or bhai")
         const date = rightValue.format('YYYY-MM-DD');
         const time = rightValue.format('HH:mm:ss');
         const timeZone = Intl.DateTimeFormat().resolvedOptions().timeZone;

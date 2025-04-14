@@ -1,6 +1,7 @@
 const mongoose = require('mongoose');
 
 const postDb = new mongoose.Schema({
+    Thumbnail:String,
     PostId:{
       type:String,
       required:true,
@@ -8,9 +9,10 @@ const postDb = new mongoose.Schema({
     },
     Status: {
         type: String,
-        enum: ['active', 'inactive', 'draft','scheduled'], // Sirf ye 3 values allow hongi
+        enum: ['active', 'inactive', 'draft','scheduled'], // Sirf ye 4 values allow hongi
         required: true // Status ko required bana rahe hain
     },
+    
     MetaData: {
         Title: String,
         Meta_Description: String,
@@ -20,17 +22,17 @@ const postDb = new mongoose.Schema({
         Author: String,
         Category: String,
         OG_Title: String,
-        OG_Description: String
+        OG_Description: String 
     },
     PostContent: {
         type: String,
         required: true
     },
     PostedBy: {
-        userId: { type: mongoose.Schema.Types.ObjectId, ref: 'AdminData' }
+        PostedByData: { type: mongoose.Schema.Types.ObjectId, ref: 'AdminData' }
     },
     EditedBy: {
-        userId: { type: mongoose.Schema.Types.ObjectId, ref: 'AdminData', default: null }
+        EditedByData: { type: mongoose.Schema.Types.ObjectId, ref: 'AdminData', default: null }
     },
     PostedTime: {
         type: Date,

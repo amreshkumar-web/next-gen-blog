@@ -9,5 +9,5 @@ loginRoutes.post('/register',uploadSingle,register);
 loginRoutes.get('/tokenValidate',AuthToken,tokenVarificationRespond)
 loginRoutes.post('/tokenRefresh',tokenRefresh)
 loginRoutes.post('/loggedOut',handelLogOut)
-
+ 
 module.exports = loginRoutes;
